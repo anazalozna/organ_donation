@@ -1,0 +1,148 @@
+@media only screen and ( max-width: 500px ) {
+  body {
+    background-size: initial;
+  }
+  .login_main {
+    text-align: center;
+  }
+}
+::-webkit-input-placeholder { color: #888; } /* gray80 */
+:-moz-placeholder           { color: #888; } /* Firefox 18- (one color)*/
+::-moz-placeholder          { color: #888; } /* Firefox 19+ (double colons) */
+:-ms-input-placeholder      { color: #888; }
+
+:focus::-webkit-input-placeholder { color: transparent; } /* gray80 */
+:focus:-moz-placeholder           { color: transparent; } /* Firefox 18- (one color)*/
+:focus::-moz-placeholder          { color: transparent; } /* Firefox 19+ (double colons) */
+:focus:-ms-input-placeholder      { color: transparent; }
+
+@media only screen and ( min-width: 500px ) {
+  .gallery_block .gallery_box {-webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-justify-content: flex-start; -ms-flex-pack: start; justify-content: flex-start;}
+  .gallery_block .gallery_box .flex_item {width:48%; margin: 0 10px 10px 0; max-height: 180px; overflow: hidden;}
+  .gallery_block .gallery_box .flex_item:nth-child(2n) {margin-right: 0;}
+  .popup_bg_dark .popup_window .gal_prev, .popup_bg_dark .popup_window .gal_next {top:50%; transform: translateY(-50%);}
+}
+
+@media only screen and ( min-width: 770px ){
+  .flex_box {-webkit-flex-wrap: nowrap; -ms-flex-wrap: nowrap; flex-wrap: nowrap;}
+
+  .flex_box .flex_item {width: initial;}
+
+  .top_panel {text-align: initial;}
+
+  .top_panel .contacts_h a {display: inline-block; margin-right: 10px; margin-bottom: 0;}
+
+  .top_panel .contacts_h a:last-child {margin-right: 0px;}
+
+  #mobile-menu, #mobile-menu-label {display: none;}
+
+  #mobile-menu + ul {display: block;}
+
+  .nav_h {text-align: right; background-color: rgba(2, 15, 23, 0.5);}
+
+  .nav_h ul li {display: inline-block; margin-right: -4.1px; position: relative;}
+
+  .nav_h ul li:last-child {margin-right: 0;}
+
+  .nav_h ul li a:hover {background-color: #d42a2a; color: #fff;}
+
+  .nav_h ul li ul.sub_menu {text-align: left; position: absolute; left: 0; top: 100%; z-index: 999; white-space: nowrap; border-radius: 0 0 5px 5px; width: 200px; background-color: #d42a2a; overflow: hidden;}
+
+  .nav_h ul li ul.sub_menu li {display: block; white-space: nowrap;}
+
+  .nav_h ul li ul.sub_menu li a:hover {color: #860707;}
+
+  .nav_h ul li.parent_menu a:after {display: none;}
+
+  .welcome_block .title_h2 {font-size: 3em;}
+
+  .promo_flex .flex_item {-webkit-box-flex: 0; -webkit-flex: 0 1 50%; -ms-flex: 0 1 50%; flex: 0 1 50%;}
+
+  .promo_flex:nth-child(2n+1) .promo_text:before, .promo_flex:nth-child(2n) .promo_text:before {top: 50%; transform: translate(0,-50%) rotate(45deg);}
+
+  .promo_flex:nth-child(2n+1) .promo_text:before {right: -20px; left: initial; }
+
+  .promo_flex:nth-child(2n) .promo_text:before {left: -20px;}
+
+  .promo_flex:nth-child(2n+1) .promo_text {order: 0;}
+
+  .promo_flex:nth-child(2n+1) .promo_link {order: 1;}
+
+  .partners_block .partners_flex {-webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap;}
+
+  .partners_block .partners_flex .flex_item.hovereffect {width: 100%; padding: 18px 0px;}
+
+  .about_block .about_flex .flex_item {margin: 20px 20px 20px 0; width: 100%;}
+
+  .about_block .about_flex .flex_item .about_img {height: 190px;}
+
+  .news_item .news_flex .flex_item {width: 100%;}
+
+  .news_item .title_h2, .events_block .events_flex .flex_item .title_h2 {font-size: 2em;}
+
+  .news_block .articles_flex {-webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap;-webkit-justify-content: space-around; -ms-flex-pack: distribute; justify-content: space-around;}
+
+  .news_block .articles_flex .news_item {width: 44%; border: 3px solid rgba(2, 15, 23, 0.2); margin: 10px 0;}
+
+  .events_block .events_flex .flex_item {width: 100%; -webkit-animation: moveUp 1.5s ease-in 1s; /* Chrome, Safari, Opera */ animation: moveUp 1.5s ease-in 1s;}
+
+  /* Chrome, Safari, Opera */
+  @-webkit-keyframes moveUp {
+    from {margin-bottom:-150px; opacity:0;}
+    to {margin-bottom:-1px; opacity:1;}
+  }
+  /* Standard syntax */
+  @keyframes moveUp {
+    from {margin-bottom:-150px; opacity:0;}
+    to {margin-bottom:-1px; opacity:1;}
+  }
+
+  .restor_block .restor_flex .flex_item {width: 100%;}
+
+  .restor_block .restor_flex .flex_item:first-child + .flex_item:not(:last-child) {padding:0 10px;}
+
+  .restor_flex .restor_img {margin-bottom: 0;}
+
+  .volunt_block .volunt_flex .flex_item {width: 25%;}
+
+  .volunt_block .volunt_flex .flex_item iframe {height: 250px;}
+
+  .tour_flex .flex_item {width: 100%;}
+
+  .sc_rates_block .schedule_table th, .sc_rates_block .schedule_table td {font-size: 1.1em;}
+
+  .contact_message .contact_flex .flex_item {width: 100%;}
+
+  .gallery_block .gallery_box {-webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-justify-content: flex-start; -ms-flex-pack: start; justify-content: flex-start;}
+
+  .gallery_block .gallery_box .flex_item {width:23%;}
+
+  .gallery_block .gallery_box .flex_item:nth-child(2n) {margin-right: 10px;}
+
+  .gallery_block .gallery_box .flex_item:nth-child(4n) {margin-right: 0;}
+
+  .popup_bg_dark .popup_window {width: 650px;}
+
+  .footer .flex_f .flex_item {font-size: .8em;}
+
+  .control_menu .mobile_nav_label {display: none;}
+  .control_menu #mobile_nav + ul.flex_control_menu {display: -ms-flexbox; display: -webkit-flex; display: flex;}
+
+  .edit_gallery_main .flex_gallery {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;}
+
+  .edit_gallery_main .flex_gallery .flex_item {width: 32%;}
+}
+@media only screen and ( min-width: 1150px ){
+  .partners_block .partners_flex {-webkit-flex-wrap: nowrap; -ms-flex-wrap: nowrap; flex-wrap: nowrap; -webkit-justify-content: center; -ms-flex-pack: center;}
+
+  .partners_block .partners_flex .flex_item.hovereffect {width: 25%; padding: 50px 0px;}
+
+  .about_block .about_flex .flex_item .about_img {height: 250px;}
+
+  .about_block .bg_sunset {background: url(../img/about_sunset.jpg) 0 93% no-repeat; background-size: cover; height: 250px;}
+
+  .edit_gallery_main .btn_add_img {position: fixed; left: 0%; top: 20%; transform: translate(0%,0); z-index: 99;}
+}

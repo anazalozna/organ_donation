@@ -1,0 +1,319 @@
+$white: #fff
+$dark_gray: #212121
+$green: rgba(111, 221, 143, 0.5)
+$dark_green: #65ac87
+$yellow: #eaba45
+
+a
+  color: $white
+
+a:hover
+  color: $yellow
+
+.padded_Y
+  padding:
+    top: 20px
+    bottom: 20px
+
+.padded_X
+  padding:
+    right: 20px
+    left: 20px
+
+.before_after_fixed
+  content: ""
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+
+ul
+  padding: 0
+  margin: 0
+  list-style: none
+
+a
+  @extend .transition
+  display: inline-block
+  text-decoration: none
+  cursor: pointer
+
+body
+  font-family: 'Lato', sans-serif
+  background: url(../img/bg_login_big.jpg) no-repeat
+  background-size: cover
+  color: $white
+  font-size: 1.1em
+  position: relative
+  padding: 0
+  margin: 0
+
+body:before
+  @extend .before_after_fixed
+  background-color: rgba(25, 16, 0, 0.85)
+  z-index: -1
+
+.errors_style
+  padding: 20px 0
+  color: #ff2b1a
+  font-size: 1.1em
+
+.hide
+  display: none
+
+.transition
+  transition: all .3s ease-in
+
+.wrapper
+  max-width: 1000px
+  width: 95%
+  margin: 0 auto
+  position: relative
+
+.wrapper_small
+  @extend .wrapper
+  max-width: 450px
+
+.flex_box
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  justify-content: flex-start
+  align-items: center
+  align-content: stretch
+
+.login_main
+  @extend .padded_Y
+
+.form_cont
+  @extend .flex_box
+  flex-direction: column
+
+.form_main
+  position: relative
+
+.title_h2
+  font-size: 2em
+  text-align: center
+
+label
+  margin: 15px 0
+
+input, select
+  @extend .transition
+  height: 50px
+  width: 100%
+  border: none
+  background-color: $green
+  border-radius: 5px
+  color: $white
+  padding: 0 20px
+  font-size: 1.1em
+  font-weight: 300
+
+input:hover, select:hover
+  background-color: $dark_green
+
+input:focus, select:focus
+  outline: none
+
+input[type="submit"], .btn_more
+  margin-top: 20px
+  width: 250px
+  border: 1px solid $dark_green
+  background-color: transparent
+  cursor: pointer
+  text-transform: uppercase
+  font-size: 1.2em
+  color: $dark_green
+  padding: 0
+  @extend .transition
+
+input[type="submit"]:hover, .btn_more:hover
+  background-color: $dark_green
+  color: $white
+
+.control_menu
+  background-color: $dark_gray
+  overflow: auto
+
+  #mobile_nav, #mobile_nav + ul.flex_control_menu
+    display: none
+
+  .mobile_nav_label
+    display: block
+    font-size: 1.5em
+    cursor: pointer
+
+  #mobile_nav:checked + ul.flex_control_menu
+    @extend .flex_box
+
+  #mobile_nav + ul.flex_control_menu
+
+    li
+      @extend .transition
+      text-align: center
+      width: 50%
+
+      a
+        @extend .padded_Y
+        color: $white
+        display: block
+
+    li:hover
+      background-color: $yellow
+
+#users
+  @extend .padded_Y
+
+.users_form
+  overflow: auto
+
+.users_table
+  width: 100%
+  border-collapse: collapse
+
+  thead tr th
+    text-transform: uppercase
+    font-size: 1.4em
+    padding: 15px
+    background-color: #251f13
+
+  tbody tr td
+    padding: 15px
+    background-color: rgba(255, 255, 255, 0.15)
+    font-size: 1.1em
+    text-align: center
+    position: relative
+
+    a
+      color: $yellow
+
+    a:hover
+      color: $white
+
+  tbody tr:last-child:not(:first-child) td
+    padding-top: 0
+
+.new_user.del, .new_user.add
+  color: transparent
+
+.new_user.del:hover, .new_user.add:hover
+  color: transparent
+
+.new_user.del:before
+  @extend .before_after_fixed, .transition
+  content: "\f056"
+  position: absolute
+  font-family: FontAwesome
+  font-size: 1.9em
+  color: $yellow
+  top: 50%
+  transform: translateY(-50%)
+  height: initial
+
+.new_user.del:hover:before
+  color: $white
+
+.new_user.add:before
+  @extend .new_user.del:before
+  content: "\f055"
+
+#success, #loading
+  display: none
+
+
+.edit_page_main
+
+  ul li
+    @extend .flex_box
+    align-items: stretch
+
+    a, strong
+      color: $white
+      width: 50%
+      padding: 13px 0
+      border-bottom: 1px dashed $yellow
+
+.edit_single_page, .edit_single_image
+  @extend .padded_Y
+
+  form
+    input
+      margin: 20px 0 0
+
+    iframe#content_ifr
+      height: 250px !important
+
+    #mceu_12
+      margin: 20px 0 0
+
+    label
+      display: block
+      margin-bottom: 0
+
+    input[type="file"]
+      padding: 0
+      background-color: transparent
+      height: auto
+      margin-bottom: 0
+
+    textarea
+      height: 100px
+      resize: none
+      width: 100%
+      margin-top: 20px
+
+.edit_single_news
+  @extend .edit_single_page
+
+.btn_more
+  text-align: center
+  border-radius: 5px
+  text-transform: uppercase
+  height: 50px
+  line-height: 50px
+
+  i
+    margin-right: 5px
+
+.edit_gallery_main
+  @extend .padded_Y
+  position: relative
+
+  .flex_gallery
+    @extend .flex_box
+    flex-wrap: wrap
+    justify-content: space-between
+
+    .flex_item
+      width: 48%
+      margin-bottom: 20px
+      text-align: center
+
+      a, img
+        width: 100%
+
+  .btn_add_img
+    padding: 10px 20px
+    background-color: #eaba45
+    color: $white
+    margin-bottom: 20px
+
+    i
+      margin-right: 5px
+
+
+.btn_delete_img, .btn_edit_img
+  display: block
+  margin-top: 10px
+
+  i
+    margin-right: 5px
+
+.edit_single_news img
+  width: 300px
+
+
+@import "responsive"
