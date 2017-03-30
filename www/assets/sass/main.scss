@@ -83,16 +83,16 @@ ul.marked li:before {content:"\f05a"; font-family: FontAwesome; position: absolu
 .slider_h { position: relative; z-index: 1;
   .slider_cont {@extend .center; position: absolute; z-index: 10; top:50%; left:50%; transform: translate(-50%, -50%); color: $white;
     .title_h2 {font-size: 2.7em;}
-    p {font-size: 5em; margin: 0; line-height: 1; white-space: nowrap;
-      span {display: inline-block; transform: rotateZ(270deg); font-weight: 700; color: $coral_red; font-size: 1.3em; vertical-align: middle;}
+    p {font-size: 6em; margin: 0; line-height: 1; white-space: nowrap;
+      span {display: inline-block; font-weight: 700; color: $coral_red; }
   }
     .btn_more {padding: 20px 40px; font-size: 1.5em; margin-top: 40px;}
 }
   .all_slides {height: 600px; overflow: hidden; position: relative;
     .slide {height: 100%;}
     .slide_1 {background: url(../img/bg_slide_1.jpeg) fixed 50% 50% no-repeat; background-size: cover;}
-    .slide_2 {background: url(../img/bg_slide_2.jpg) fixed 50% 50% no-repeat; background-size: cover;}
-    .slide_3 {background: url(../img/bg_slide_3.jpg) fixed 50% 50% no-repeat; background-size: cover;}
+    .slide_2 {background: url(../img/bg_slide_2.jpg) fixed 50% 0% no-repeat; background-size: cover;}
+    .slide_3 {background: url(../img/bg_slide_3.jpg) fixed 50% 0% no-repeat; background-size: cover;}
 }
   .all_slides:before {position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(21, 22, 47, 0.8);}
   .slider_arrow {position: absolute; top:50%; font-size: 1.6em; opacity: .6; color: $coral_red; transform: translateY(-50%);}
@@ -142,7 +142,7 @@ ul.marked li:before {content:"\f05a"; font-family: FontAwesome; position: absolu
 .map:before {position: absolute; top: 0; left: 0; height: 250px; width: 100%; background: rgba(91, 93, 101, 0.5);}
 
 //footer
-.footer_block {background-color: $ivory; @extend .padded_Y; @extend .center;
+.footer_block {background-color: $ivory; @extend .padded_Y; @extend .center; position: relative;
   .socials_f {
     a {color: $coral_red; margin: 10px;}
     a:hover {color: $dark_blue;}
@@ -159,17 +159,17 @@ ul.marked li:before {content:"\f05a"; font-family: FontAwesome; position: absolu
     .flex_item {width: 100%; padding-bottom: 40px;
       p strong {font-family: 'Raleway', sans-serif; color: $ivory;}
       p strong:before, p strong:after {display: none;}
-  }
+    }
     .flex_item:last-child {padding-bottom: 0;}
-}
+  }
 }
 .about_facts:before { position: absolute; top: 0; left: 0; background: rgba(255, 255, 255, 0.3); width: 100%; height: 100%;}
 
-.organs_block {background: linear-gradient(to right, #0c0e11 0%,#171a21 20%,#171a21 50%,#171a21 80%,#0c0e11 100%); overflow: hidden;
-  .flex_organs {@include flex_box(row, wrap, space-between, stretch, center); color: $white; padding-top: 40px;
-    .flex_item {width: 100%; padding-bottom: 40px; @include transition(1);}
-    .organ_img_item {display: none;}
-}
+  .organs_block {background: linear-gradient(to right, #0c0e11 0%,#171a21 20%,#171a21 50%,#171a21 80%,#0c0e11 100%); overflow: hidden;
+    .flex_organs {@include flex_box(row, wrap, space-between, stretch, center); color: $white; padding-top: 40px;
+      .flex_item {width: 100%; padding-bottom: 40px; @include transition(1);}
+      .organ_img_item {display: none;}
+  }
 }
 
 @mixin transform($x,$y){
@@ -190,46 +190,39 @@ ul.marked li:before {content:"\f05a"; font-family: FontAwesome; position: absolu
   .faq_box:hover {background-color: #ececec;}
 }
 
+//404 page
+.bg_404 {background: url(../img/404.jpg) no-repeat; background-size: cover;}
+.bg_404:before {position: absolute; top:0; left:0; background-color: rgba(0,0,0,.9); width: 100%; height: 100%;}
+.page_404 {margin: 250px 0; color: $white; @extend .center; line-height: 1.1; font-size: 2.3em}
+
 @media only screen and ( min-width: 770px ){
 
-.slider_h .slider_cont .title_h2 {font-size: 3.7em;}
-.slider_h .slider_arrow {font-size: 2.6em;}
+  .slider_h .slider_cont .title_h2 {font-size: 3.7em;}
+  .slider_h .slider_arrow {font-size: 2.6em;}
 
-.faq_block .flex_faq {justify-content: center;
-  .flex_item {width: 40%;}
-}
-
-.videos_block .flex_videos .flex_item {width: 30%; margin: 0;}
-
-//about page
-.about_facts .flex_facts .flex_item {width: 23%; padding-bottom: 0px;}
-
-.organs_block{
-  .flex_organs {
-    .flex_item {width: 50%;
-      .organ_img {padding: 30px; background: #ccc; border-radius: 300px; width: 7em; }
+  .faq_block .flex_faq {justify-content: center;
+    .flex_item {width: 40%;}
   }
-    .organ_img_item {display: block;}
-    .flex_item:nth-child(2n+1) .organ_img {margin: 0 auto 0 0;}
-    .flex_item:nth-child(2n) .organ_img {margin: 0 0 0 auto;}
-}
-}
-//.flex_item {width: 100%; -webkit-animation: moveUp 1.5s ease-in 1s; /* Chrome, Safari, Opera */ animation: moveUp 1.5s ease-in 1s;}
 
-  /* Chrome, Safari, Opera */
-  @-webkit-keyframes moveUp {
-    from {margin-bottom:-150px; opacity:0;}
-    to {margin-bottom:-1px; opacity:1;}
-  }
-  /* Standard syntax */
-  @keyframes moveUp {
-    from {margin-bottom:-150px; opacity:0;}
-    to {margin-bottom:-1px; opacity:1;}
+  .videos_block .flex_videos .flex_item {width: 30%; margin: 0;}
+
+  //about page
+  .about_facts .flex_facts .flex_item {width: 23%; padding-bottom: 0px;}
+
+  .organs_block{
+    .flex_organs {
+      .flex_item {width: 50%;
+        .organ_img {padding: 60px; background: #ccc; border-radius: 300px; width: 7em; }
+    }
+      .organ_img_item {display: block;}
+      .flex_item:nth-child(2n+1) .organ_img {margin: 0 auto 0 0;}
+      .flex_item:nth-child(2n) .organ_img {margin: 0 0 0 auto;}
+    }
   }
 
 }
 @media only screen and ( min-width: 1100px ){
-.faq_block .flex_faq {justify-content: space-between;
-  .flex_item {width: 20%;}
-}
+  .faq_block .flex_faq {justify-content: space-between;
+    .flex_item {width: 20%;}
+  }
 }
